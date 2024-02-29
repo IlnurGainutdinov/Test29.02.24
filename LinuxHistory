@@ -1,0 +1,193 @@
+41  mkdir Test
+
+   42  cd Test/
+
+   43  cat > HomeAnimal
+
+   44  cat HomeAnimal 
+
+   45  cat HomeAnimal 
+
+   46  cat >  PackAnimals
+
+   47  cat PackAnimals
+
+   48  cat >  PackAnimals
+
+   49  cat PackAnimals
+
+   50  cat >  PackAnimals
+
+   51  cat PackAnimals
+
+   52  cat HomeAnimal PackAnimals > Animal
+
+   53  cat Animal
+
+   54  mv Animal HumanFriends
+
+   55  cat HumanFriends 
+
+   56  ls
+
+   57  mkdir NewDirectory
+
+   58  ls
+
+   59  mv HumanFriends NewDirectory/
+
+   60  ls
+
+   61  cd NewDirectory/
+
+   62  ls
+
+   63  history
+
+   64  apt update
+
+   65  sudo apt update
+
+   66  sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+
+   67  sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+
+   68  sudo apt update
+
+   69  sudo dpkg -r mysql-apt-config_0.8.24-1_all.deb
+
+   70  sudo dpkg -r mysql-apt-config_0.8.24-1
+
+   71  sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+
+   72  sudo apt-get update
+
+   73  sudo dpkg -r mysql-apt-config_0.8.24-1
+
+   74  sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+   75  sudo dpkg - i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+   76  sudo dpkg -i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+   77  sudo dpkg -r mysql-connector-j_8.0.32-1ubuntu22.04
+
+   78  dpkg -l
+
+   79  r
+
+   80  sudo dpkg --purge mysql-connector-j_8.0.32-1ubuntu22.04
+
+   81  sudo dpkg -r mysql-connector
+
+   82  sudo dpkg -i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+   83  sudo dpkg -r mysql-connector-j
+
+   84  sudo apt-get update
+
+   85  history
+
+   86  cd Test
+
+   87  ls
+
+   88  cd NewDirectory/
+
+   89  ls
+
+   90  cat HumanFriends 
+
+   91  cd /
+
+   92  cd Test
+
+   93  pwd
+
+   94  cd .
+
+   95  pwd
+
+   96  cd ..
+
+   97  pwd
+
+   98  cd~
+
+   99  cd ~
+
+  100  pwd
+
+  101  cd Test/
+
+  102  ls
+
+  103  cat HomeAnimal 
+
+  104  mysql
+
+  105  sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+
+  106  mysql
+
+  107  sudo dpkg -i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+  108  cd ~
+
+  109  mysql
+
+  110  sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+
+  111  mysql
+
+  112  sudo dpkg -i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+  113  mysql
+
+  114  sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+
+  115  mysql
+
+  116  sudo apt install mysql-client-core-8.0
+
+  117  mysql
+
+  118  systemctl status mysql
+
+  119  cd Test/
+
+  120  sudo apt install mysql-server -y
+
+  121  systemctl status mysql
+
+  122  sudo mysql -u root -p
+
+  123  exit
+
+  124  cd Test/
+
+  125  mysql
+
+  126  mysql -u root -p
+
+  127  sudo mysql -u root
+
+  128  sudo find / -name .mysql_history
+
+  129  sudo find / -root .mysql_history
+
+  130  cat ~/root/ .mysql_history
+
+  131  sudo find / -ilnur .mysql_history
+
+  132  sudo find / -root .mysql_history
+
+  133  sudo find / -name .mysql_history
+
+  134  mysql -u root -p
+
+  135  sudo mysql -u root
+
+  136  history
+
+ilnur@ilnur-VirtualBox:~/Test$ 
