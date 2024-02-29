@@ -1,0 +1,42 @@
+1. CREATE DATABASE HumanFriends;
+2. use HumanFriends;
+3. CREATE TABLE `HomeAnimal` (   `id` Int NOT NULL AUTO_INCREMENT,   `class_name` Varchar(10) NOT NULL,   PRIMARY KEY (`id`) );
+4. CREATE TABLE `PackAnimals` (   `id` Int NOT NULL AUTO_INCREMENT,   `class_name` Varchar(10) NOT NULL,   PRIMARY KEY (`id`) );
+5. INSERT INTO HomeAnimal (id, class_name) VALUES (1, 'Dog');
+6. INSERT INTO HomeAnimal (id, class_name) VALUES (2, 'Cat');
+7. INSERT INTO HomeAnimal (id, class_name) VALUES (3, 'Hamster');
+8. INSERT INTO PackAnimals (id, class_name) VALUES (1, 'Horse');
+9. INSERT INTO PackAnimals (id, class_name) VALUES (2, 'Camel');
+10. INSERT INTO PackAnimals (id, class_name) VALUES (3, 'Donkey');
+11. CREATE TABLE `Dog` (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE);
+12. INSERT INTO Dog  (id, name, commands, birthday) VALUES (1, 'Palcan', 'Seat','10.10.2000');
+13. CREATE TABLE `Cat` (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE);
+14. INSERT INTO Cat  (id, name, commands, birthday) VALUES (1, 'Murzic', 'Jump','2015-05-03');
+15. CREATE TABLE `Hamster` (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE);
+16. INSERT INTO Hamster  (id, name, commands, birthday) VALUES (1, 'Zhora', 'Stay','2018-06-08');
+17. CREATE TABLE `Horse` (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE);
+18. INSERT INTO Horse  (id, name, commands, birthday) VALUES (1, 'Star', 'Run','2017-04-09');
+19. CREATE TABLE `Camel` (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE);
+20. INSERT INTO Camel  (id, name, commands, birthday) VALUES (1, 'Smoke', 'Smell','2011-11-03');
+21. CREATE TABLE Donkey (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE);
+22. INSERT INTO Donkey  (id, name, commands, birthday) VALUES (1, 'Ia', 'Fly','2013-12-01');
+23. truncate Camel;
+24. INSERT INTO Horse (name, commands, birthday) SELECT name, commands, birthday FROM Donkey;
+25. DROP TABLE Donkey;
+26. RENAME TABLE Horse TO Horse_and_Donkey;
+27. CREATE TABLE YoungAnimal (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE, `age` Int);
+28. INSERT INTO YoungAnimal (`name`, `commands`, `birthday`, `age`) SELECT name, commands, birthday FROM Horse_and_Donkey
+ WHERE TIMESTAMPDIFF(year, birthday, CURDATE()) BETWEEN 1 and 3 UNION
+ SELECT name, commands, birthday FROM Dog
+ WHERE TIMESTAMPDIFF(year, birthday, CURDATE()) BETWEEN 1 and 3 UNION 
+ SELECT name, commands, birthday FROM Cat
+ WHERE TIMESTAMPDIFF(year, birthday, CURDATE()) BETWEEN 1 and 3 UNION 
+ SELECT name, commands, birthday FROM Hamster
+ WHERE TIMESTAMPDIFF(year, birthday, CURDATE()) BETWEEN 1 and 3;
+29. CREATE TABLE YoungAnimal1 (`id` Int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` Varchar(10) NOT NULL, `commands` Varchar(20), `birthday` DATE, `age` Int);
+30. INSERT INTO YoungAnimal1 (`name`, `commands`, `birthday`, `age`)
+ SELECT name, commands, birthday, TIMESTAMPDIFF(year, birthday, CURDATE()) FROM Horse_and_Donkey UNION
+ SELECT name, commands, birthday,  TIMESTAMPDIFF(year, birthday, CURDATE()) FROM Dog UNION 
+ SELECT name, commands, birthday,  TIMESTAMPDIFF(year, birthday, CURDATE()) FROM Cat UNION 
+ SELECT name, commands, birthday,  TIMESTAMPDIFF(year, birthday, CURDATE()) FROM Hamster;
+31. select * from YoungAnimal1;
